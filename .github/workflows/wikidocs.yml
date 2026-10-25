@@ -35,8 +35,8 @@ jobs:
           WIKIDOCS_TOKEN: ${{ secrets.WIKIDOCS_TOKEN }}
         run: |
           if [ -z "$WIKIDOCS_TOKEN" ]; then
-            echo "::error::WIKIDOCS_TOKEN 시크릿이 없습니다. Settings → Secrets and variables → Actions 에 추가하세요."
-            exit 1
+            echo "::notice::WIKIDOCS_TOKEN 시크릿이 없어 업로드를 건너뜁니다. 자동 업로드를 쓰려면 Settings → Secrets and variables → Actions 에 추가하세요."
+            exit 0
           fi
           python tools/publish_wikidocs.py --src wikidocs ${{ inputs.open && '--open' || '' }}
       - name: Save book state
