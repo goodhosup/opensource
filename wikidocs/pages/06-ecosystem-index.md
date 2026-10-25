@@ -1,0 +1,6 @@
+오픈소스를 움직이는 재단, 기업, 사람들과 국내의 참여 기회를 다룹니다.
+
+| 장 | 내용 |
+|---|---|
+| [재단과 프로젝트](https://goodhosup.github.io/opensource/ecosystem/foundations/) | 주요 재단, 대표 프로젝트, 비즈니스 모델, 국내 사례, 생태계를 바꾼 사건 |
+| [대회와 커뮤니티](https://goodhosup.github.io/opensource/ecosystem/community/) | 오픈소스 개발자대회, 컨트리뷰션 아카데미, 테크데이 등 행사, 국내 커뮤니티 |

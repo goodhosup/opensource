@@ -1,0 +1,118 @@
+site_name: 오픈소스 핸드북
+site_description: 오픈소스의 개념과 라이선스, Git·GitHub 사용법, 국내 정책과 커뮤니티, AI 시대의 향후 방향까지 정리한 한글 안내서
+site_author: 오픈소스 핸드북
+site_url: https://goodhosup.github.io/opensource/
+repo_url: https://github.com/goodhosup/opensource
+repo_name: opensource
+edit_uri: edit/main/docs/
+copyright: 본문은 직접 작성했으며 정책·통계 정보는 각 페이지에 출처를 밝혔습니다.
+
+theme:
+  name: material
+  language: ko
+  font:
+    text: Noto Sans KR
+    code: JetBrains Mono
+  icon:
+    logo: material/source-branch
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: 다크 모드로 전환
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: 라이트 모드로 전환
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - navigation.path
+    - toc.follow
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - content.action.edit
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+plugins:
+  - search
+
+validation:
+  anchors: warn
+
+nav:
+  - 홈:
+      - index.md
+      - 한눈에 보기: summary.md
+  - 1부 개념:
+      - concepts/index.md
+      - 정의와 원칙: concepts/definition.md
+      - 역사: concepts/history.md
+      - 자유 소프트웨어와 오픈소스: concepts/free-software.md
+      - 주요 용어: concepts/terms.md
+      - 장점과 한계: concepts/pros-cons.md
+  - 2부 라이선스:
+      - license/index.md
+      - 라이선스 비교와 실무: license/licenses.md
+  - 3부 Git:
+      - git/index.md
+      - 설치와 처음 설정: git/setup.md
+      - 기본 명령: git/basics.md
+      - 브랜치와 병합: git/branch.md
+      - 원격 저장소: git/remote.md
+      - 실수 되돌리기: git/undo.md
+      - 한 단계 더: git/advanced.md
+      - 명령어 요약표: git/cheatsheet.md
+  - 4부 GitHub:
+      - github/index.md
+      - 계정과 저장소: github/basics.md
+      - 오픈소스 기여 워크플로: github/contribute.md
+      - 이슈·PR·코드 리뷰: github/issues-pr.md
+      - 저장소 운영과 협업 설정: github/repo-ops.md
+      - GitHub Actions: github/actions.md
+      - GitHub Pages: github/pages.md
+      - 보안 기능: github/security.md
+      - GitHub CLI: github/cli.md
+  - 5부 생태계:
+      - ecosystem/index.md
+      - 재단과 프로젝트: ecosystem/foundations.md
+      - 대회와 커뮤니티: ecosystem/community.md
+  - 6부 향후 방향:
+      - future/index.md
+      - 향후 방향: future/trends.md
+      - AI가 미치는 영향: future/ai.md
+  - 부록:
+      - appendix/index.md
+      - 국내 정책·지원 사이트: appendix/policy-sites.md
