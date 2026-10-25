@@ -4,4 +4,3 @@ build/
 __pycache__/
 *.pyc
 .cache/
-wikidocs/.wikidocs-state.json

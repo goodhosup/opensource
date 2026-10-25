@@ -1,0 +1,48 @@
+name: Publish to WikiDocs
+
+# 위키독스 API 토큰은 저장소 Settings → Secrets and variables → Actions 에 WIKIDOCS_TOKEN 으로 저장한다.
+# 처음 실행하면 새 책을 만들고, 책·페이지 ID를 wikidocs/.wikidocs-state.json 에 커밋해 두어
+# 이후 실행에서는 같은 책을 갱신한다.
+on:
+  workflow_dispatch:
+    inputs:
+      open:
+        description: "새 책을 공개로 만들기 (처음 실행할 때만 적용)"
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths: [wikidocs/**]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: wikidocs
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - name: Upload to WikiDocs
+        env:
+          WIKIDOCS_TOKEN: ${{ secrets.WIKIDOCS_TOKEN }}
+        run: |
+          if [ -z "$WIKIDOCS_TOKEN" ]; then
+            echo "::error::WIKIDOCS_TOKEN 시크릿이 없습니다. Settings → Secrets and variables → Actions 에 추가하세요."
+            exit 1
+          fi
+          python tools/publish_wikidocs.py --src wikidocs ${{ inputs.open && '--open' || '' }}
+      - name: Save book state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add wikidocs/.wikidocs-state.json
+          git diff --cached --quiet || git commit -m "chore: 위키독스 책·페이지 ID 기록 [skip ci]"
+          git push
