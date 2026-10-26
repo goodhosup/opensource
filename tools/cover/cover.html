@@ -1,0 +1,58 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:K;font-weight:400;src:url(noto-sans-kr-korean-400-normal.woff2),url(noto-sans-kr-latin-400-normal.woff2)}
+@font-face{font-family:K;font-weight:700;src:url(noto-sans-kr-korean-700-normal.woff2),url(noto-sans-kr-latin-700-normal.woff2)}
+@font-face{font-family:K;font-weight:900;src:url(noto-sans-kr-korean-900-normal.woff2),url(noto-sans-kr-latin-900-normal.woff2)}
+@font-face{font-family:KL;font-weight:400;src:url(noto-sans-kr-latin-400-normal.woff2)}
+@font-face{font-family:KL;font-weight:700;src:url(noto-sans-kr-latin-700-normal.woff2)}
+@font-face{font-family:KL;font-weight:900;src:url(noto-sans-kr-latin-900-normal.woff2)}
+@font-face{font-family:M;src:url(jetbrains-mono-latin-500-normal.woff2)}
+html,body{margin:0}
+body{width:1200px;height:1600px;overflow:hidden;font-family:KL,K,sans-serif;color:#eef0ff;
+ background:radial-gradient(1200px 900px at 85% 10%,#2b3a8f 0%,transparent 60%),radial-gradient(900px 700px at 0% 100%,#3a1f6e 0%,transparent 60%),#0f1638;position:relative}
+.graph{position:absolute;left:0;top:0}
+.wrap{position:absolute;left:96px;right:96px;bottom:120px}
+.kicker{font:500 26px M,monospace;color:#ffc857;letter-spacing:.5px;margin-bottom:34px}
+.kicker span{color:#8fa0e8}
+h1{margin:0;font-weight:900;font-size:168px;line-height:1.02;letter-spacing:-6px}
+h1 em{font-style:normal;color:#ffc857}
+.sub{margin-top:40px;font-weight:400;font-size:38px;line-height:1.5;color:#c9cff5;letter-spacing:-.5px}
+.tags{margin-top:56px;display:flex;flex-wrap:wrap;gap:14px}
+.tags b{font-weight:700;font-size:26px;padding:10px 24px;border:2px solid rgba(255,255,255,.28);border-radius:999px;color:#e4e8ff}
+.foot{margin-top:84px;padding-top:30px;border-top:2px solid rgba(255,255,255,.18);display:flex;justify-content:space-between;font-size:26px;color:#9aa5d8}
+.foot strong{color:#eef0ff;font-weight:700}
+</style></head><body>
+<svg class="graph" width="1200" height="760" viewBox="0 0 1200 760">
+ <defs><linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity="1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+ <mask id="m"><rect width="1200" height="760" fill="url(#fade)"/></mask></defs>
+ <g mask="url(#m)" fill="none" stroke-width="10" stroke-linecap="round">
+  <!-- main -->
+  <path d="M300 -20 V600" stroke="#6f86ff"/>
+  <!-- feature branch 1 -->
+  <path d="M300 120 C300 190 520 170 520 240 V380 C520 450 300 430 300 500" stroke="#ffc857"/>
+  <!-- feature branch 2 -->
+  <path d="M520 260 C520 320 760 300 760 360 V420 C760 500 300 500 300 580" stroke="#3ad6b0" opacity=".9"/>
+  <!-- fork / upstream -->
+  <path d="M300 40 C300 90 980 70 980 150 V560" stroke="#ff7a8a" opacity=".75"/>
+  
+ </g>
+ <g mask="url(#m)" stroke="#0f1638" stroke-width="8">
+  <circle cx="300" cy="40" r="20" fill="#6f86ff"/><circle cx="300" cy="120" r="20" fill="#6f86ff"/>
+  <circle cx="300" cy="300" r="20" fill="#6f86ff"/><circle cx="300" cy="500" r="26" fill="#ffffff"/><circle cx="300" cy="580" r="20" fill="#3ad6b0"/>
+  <circle cx="520" cy="240" r="20" fill="#ffc857"/><circle cx="520" cy="320" r="20" fill="#ffc857"/><circle cx="520" cy="380" r="20" fill="#ffc857"/>
+  <circle cx="760" cy="360" r="20" fill="#3ad6b0"/><circle cx="760" cy="420" r="20" fill="#3ad6b0"/>
+  <circle cx="980" cy="150" r="20" fill="#ff7a8a"/><circle cx="980" cy="260" r="20" fill="#ff7a8a"/><circle cx="980" cy="380" r="20" fill="#ff7a8a"/>
+ </g>
+ <g font-family="M,monospace" font-size="22" fill="#b9c3f5" mask="url(#m)">
+  <text x="336" y="47">init</text><text x="556" y="247">feat: 첫 기여</text>
+  <text x="796" y="367">docs</text><text x="1016" y="157">fork</text><text x="336" y="507" fill="#fff">merge #1</text>
+ </g>
+</svg>
+<div class="wrap">
+ <div class="kicker"><span>$</span> git clone open-source</div>
+ <h1>오픈소스<br><em>핸드북</em></h1>
+ <div class="sub">개념과 라이선스부터 Git·GitHub 실전,<br>국내 커뮤니티와 AI 시대의 방향까지</div>
+ <div class="tags"><b>개념</b><b>라이선스</b><b>Git</b><b>GitHub</b><b>커뮤니티</b><b>AI</b></div>
+ <div class="foot"><span><strong>2026</strong> 초판</span><span>goodhosup.github.io/opensource</span></div>
+</div>
+</body></html>
